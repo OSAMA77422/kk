@@ -80,4 +80,27 @@ switch (*s)
 return (i);
 }
 
+/**
+ * g_w - width func
+ * @s: string
+ * @p: struct
+ * @a: pointer
+*/
 
+char *g_w(char *s, op_t *p, va_list a)
+{
+int i = 0;
+
+if (*s == '*')
+{
+i = va_arg(a, int);
+s++;
+}
+else 
+{
+while (_i_d(*s))
+	i = i * 10 + (*s++ - '0');
+}
+p->w = i;
+return (s);
+}
